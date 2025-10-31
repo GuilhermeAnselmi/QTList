@@ -16,17 +16,22 @@ set(TS_FILES QTList_en_US.ts)
 
 set(PROJECT_SOURCES
         main.cpp
-        list.cpp
-        list.h
-        list.ui
+        forms/list/list.cpp
+        forms/list/list.h
+        forms/list/list.ui
         ${TS_FILES}
-        config.cpp
-        config.h
-        config.ui
+        forms/config/config.cpp
+        forms/config/config.h
+        forms/config/config.ui
+        services/common/common.cpp
+        services/common/common.h
+        services/manageList/manageList.cpp
+        services/manageList/manageList.h
 )
 
 # Include directories for external libraries
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/include")
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}/services")
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(QTList

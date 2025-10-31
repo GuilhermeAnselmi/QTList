@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QStringListModel>
 
+#include "manageList/manageList.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class List;
@@ -19,6 +21,7 @@ public:
     ~List();
 
 private:
+    ManageList *_manage;
     QStringListModel *_model;
 
     Ui::List *ui;

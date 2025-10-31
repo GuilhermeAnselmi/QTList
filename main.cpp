@@ -1,4 +1,4 @@
-#include "list.h"
+#include "forms/list/list.h"
 
 #include <QApplication>
 #include <QLocale>
