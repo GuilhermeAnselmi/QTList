@@ -27,5 +27,6 @@ private:
     void OnAddList();
     void OnRemoveList();
     void OnSaveList();
+    void OnOpenConfig();
 };
 #endif // LIST_H

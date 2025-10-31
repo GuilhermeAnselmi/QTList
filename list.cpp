@@ -5,6 +5,7 @@
 #include <QDir>
 #include "nlohmann/json.hpp"
 #include <fstream>
+#include "config.h"
 
 List::List(QWidget *parent)
     : QMainWindow(parent)
@@ -18,6 +19,7 @@ List::List(QWidget *parent)
     connect(ui->btnAddList, &QPushButton::clicked, this, &List::OnAddList);
     connect(ui->btnRemoveList, &QPushButton::clicked, this, &List::OnRemoveList);
     connect(ui->btnSaveList, &QPushButton::clicked, this, &List::OnSaveList);
+    connect(ui->actionConfiguration, &QAction::triggered, this, &List::OnOpenConfig);
 
     OnLoad();
 }
@@ -144,4 +146,9 @@ void List::OnSaveList() {
     } catch (std::exception ex) {
         QMessageBox::critical(this, "Error", ex.what());
     }
+}
+
+void List::OnOpenConfig() {
+    Config *config = new Config();
+    config->show();
 }

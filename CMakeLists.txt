@@ -20,6 +20,9 @@ set(PROJECT_SOURCES
         list.h
         list.ui
         ${TS_FILES}
+        config.cpp
+        config.h
+        config.ui
 )
 
 # Include directories for external libraries
